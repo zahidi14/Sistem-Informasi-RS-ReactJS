@@ -10,12 +10,7 @@ class Poliklinik extends Component{
                <table>
                    
                    <tr>
-                       <th>Nama Dokter</th>
-                       <th>Alamat</th>
-                       <th>Telepon</th>
-                       <th>Tempat Prakter</th>
-                       <th></th>
-                       <th></th>
+                       <th>Nama Poli</th>
                    </tr>
                </table>
            

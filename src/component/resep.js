@@ -4,9 +4,21 @@ import React, {Component} from 'react';
 class Resep extends Component{
     render(){
         return(
-            <div>
-                Dashboard
-            </div>
+            <table>
+                
+            <tr>
+               
+                <th>Nama Pasien</th>
+                <th>Keluhan</th>
+                <th>Diagnosa</th>
+                <th>Perawatan</th>
+                <th>Tindakan</th>
+                <th>Resep</th>
+            </tr>
+            <tr>
+                <td></td>
+            </tr>
+        </table>
         )
     }
 }

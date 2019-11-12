@@ -8,7 +8,20 @@ $hover-col: rgb(102, 115, 122);
 $nav-color: rgba(37, 43, 70, 1);
 $nav-col: rgba(40, 43, 70, 1);
 
+navigation{
+  width: 100%;
+  height: 50px;
+ 
+  background-color: $nav-col;
+  padding: 0 5em;
+  display: flex;
+  justify-content: center;
+  h1{
+      margin-left: auto;
+      color: white;
+  }
 
+}
 .container{
   width: 100%;
   display: block;
@@ -44,10 +57,11 @@ $nav-col: rgba(40, 43, 70, 1);
       input, button{
         align-self: auto;
       }
+      display: block;
       input[type=text]{
         border:none;
         border-bottom: 2px solid $hover-col;
-        width: 100px;
+        width: 100%;
         height: 30px;
         background-color: $nav-color;
         transition: width .2s ease-in-out;

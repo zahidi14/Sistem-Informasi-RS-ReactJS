@@ -11,10 +11,13 @@ import Resep from './resep';
 import Obat from './obat';
 
 
+
 const Main= () =>(
+
+   
     <Switch>
         <Route exact path="/" component={Dashboard} />
-        <Route path="/dokter" component={Dokter} />
+        <Route path="/dokter" component={Dokter}/>
         <Route path="/pegawai" component={Pegawai} />
         <Route path="/pasien" component={Pasien} />
         <Route path="/poliklinik" component={Poliklinik} />
