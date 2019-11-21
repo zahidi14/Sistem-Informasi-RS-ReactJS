@@ -1,24 +1,22 @@
 import React, {Component} from 'react';
 
-class DokForm extends Component {
+class PegForm extends Component{
     constructor(props) {
         super(props);
         
         this.initialState = {
+            nip: '',
             nama: '',
             alamat: '',
             telp: '',
-            kerja: '',
-            hariKerja: '',
-            mulai: '',
-            selesai :''           
+            ttl: '',
+            gender: ''           
         };
 
         this.state = this.initialState;
     }
-
     handleChange = event => {
-        const { name, value } = event.target;
+        const { name, value} = event.target;
 
         this.setState({
             [name] : value
@@ -27,18 +25,21 @@ class DokForm extends Component {
 
     onFormSubmit = (event) => {
         event.preventDefault();
-        
         this.props.handleSubmit(this.state);
         this.setState(this.initialState);
     }
 
-    render() {
-        const { nama, alamat, telp, kerja, hariKerja, mulai, selesai } = this.state; 
-        console.log(this.state);
-        return (
+    render(){
+        const {nip, nama, alamat, telp, ttl, gender} = this.state;
+        return(
             <form onSubmit={this.onFormSubmit} className="form">
-               
-                <input
+                    <input
+                    type="text" 
+                    name="nip" 
+                    value={nip}
+                    placeholder="NIP..."  
+                    onChange={this.handleChange} ></input>
+                  <input
                     type="text" 
                     name="nama" 
                     value={nama}
@@ -62,41 +63,23 @@ class DokForm extends Component {
                     onChange={this.handleChange} />
              
                 <input 
-                    placeholder="Tempat Kerja..."
+                    placeholder="Tempat Tanggal Lahir..."
                     type="text" 
-                    name="kerja" 
-                    value={kerja} 
+                    name="ttl" 
+                    value={ttl} 
                     onChange={this.handleChange} />
           
                 <input 
-                    placeholder="Hari Kerja..."
+                    placeholder="Jenis Kelamin..."
                     type="text" 
-                    name="hariKerja" 
-                    value={hariKerja} 
+                    name="gender" 
+                    value={gender} 
                     onChange={this.handleChange} />
-                
-
-                <input 
-                placeholder="Jam Mulai..."
-                    type="text" 
-                    name="mulai" 
-                    value={mulai} 
-                    onChange={this.handleChange} />
-        
-                <input 
-                placeholder="Jam Selesai..."
-                    type="text" 
-                    name="selesai" 
-                    value={selesai} 
-                    onChange={this.handleChange} />
-                
-                <button type="submit">
-                    Submit
-                </button>
+                    <button type="submit">Submit</button>
             </form>
-           
-        );
+        )
     }
 }
 
-export default DokForm;
+
+export default PegForm;

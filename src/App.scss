@@ -7,6 +7,7 @@
 $hover-col: rgb(102, 115, 122);
 $nav-color: rgba(37, 43, 70, 1);
 $nav-col: rgba(40, 43, 70, 1);
+$red: rgb(198, 109, 98);
 
 navigation{
   width: 100%;
@@ -21,6 +22,23 @@ navigation{
       color: white;
   }
 
+}
+
+button{
+  border-radius:5px;
+  width: 100px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  height: 40px;
+  background-color:$nav-col;
+  color: #fff;
+  margin-left: 5px;
+}
+
+button:hover{
+  border: 1px solid $nav-col;
+  color: $nav-col;
+  background-color: #fff;
 }
 .container{
   width: 100%;
@@ -50,36 +68,7 @@ navigation{
       }
      
     }
-    form{
-      margin-left: auto;
-      margin-top: auto;
-      margin-bottom: auto;
-      input, button{
-        align-self: auto;
-      }
-      display: block;
-      input[type=text]{
-        border:none;
-        border-bottom: 2px solid $hover-col;
-        width: 100%;
-        height: 30px;
-        background-color: $nav-color;
-        transition: width .2s ease-in-out;
-      }
-      input[type=text]:focus{
-        width: 130px;
-        background-color: $hover-col;
-        color: #fff;
-      }
-      button{
-        border-radius:50%;
-        width: 30px;
-        height: 30px;
-        background-color:#fff;
-        color: $nav-color;
-        margin-left: 5px;
-      }
-    }
+   
   }
   table{
     border-collapse: collapse;
@@ -92,6 +81,28 @@ navigation{
     tr:hover{
       background-color: $hover-col;
     }
+  }
+
+}
+.form{
+  width: 100%;
+  display: block;
+  input[type=text]{
+    margin: 10px;
+    border: 1px solid $nav-col;
+    width: 300px;
+    height: 45px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color:#fff;
+    transition: border .1s ease-in-out;
+    
+  }
+  input[type=text]:focus{
+ 
+    border: 3px solid $red;
+    color:#000;
+
   }
 
 }

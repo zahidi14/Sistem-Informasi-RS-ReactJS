@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import '../App.scss';
-import Form from '../form/dokForm';
+import DokForm from '../form/dokForm';
 
 
 const TableHead = () =>{
@@ -14,9 +14,10 @@ const TableHead = () =>{
                     <th>Hari Kerja</th>
                     <th>Jam Mulai</th>
                     <th>Jam Selesai</th>
+                    <th>Remove</th>
                 </tr>
         </thead>
-    )
+    );
 }
 
 
@@ -32,7 +33,7 @@ const TableBody= props =>{
             <td>{row.hariKerja}</td>
             <td>{row.mulai}</td>
             <td>{row.selesai}</td>
-            <td><button onClick={() => props.removeData(index)}>Hapus</button></td>
+            <td><button onClick={() => props.removeCharacter(index)}>Delete</button></td>
 
         </tr>
         );
@@ -44,56 +45,38 @@ const Table = props =>(
     
     <table>
         <TableHead />
-        <TableBody characterData={props.characterData} removeData={props.removeData} />
+        <TableBody characterData={props.characterData} removeCharacter={props.removeCharacter} />
     </table>
 )
 
 
 class Dokter extends Component{
    state = {
-      char : [
-        {
-            nama: 'asd',
-            alamat: 'sss',
-            telp: '098',
-            kerja: 'sadf',
-            hariKerja: 'sdfdsf',
-            mulai: 'afsdfasf',
-            selesai: 'fsdfdf',
-        },
-        {
-            nama: 'asd',
-            alamat: 'sss',
-            telp: '098',
-            kerja: 'sadf',
-            hariKerja: 'sdfdsf',
-            mulai: 'afsdfasf',
-            selesai: 'fsdfdf',
-        },
-      ]
-   }
+      characters : []
+   };
 
-   removeData = index =>{
-       const { char }  =this.state
+   removeCharacter = index =>{
+       const { characters }  =this.state;
+
        this.setState({
-           char:char.filter((character, i) =>{
+           characters:characters.filter((character, i) =>{
             return i !==index;
-           }),
-       })
+           })
+       });
    }
 
    handleSubmit = character => {
-    this.setState({char: [...this.state.char, character]});
+    this.setState({characters: [...this.state.characters, character]});
 }
     render(){
         
-        const {char} = this.state;
+        const {characters} = this.state;
     
        
         return(
           <div>
-              <Table characterData={char} removeData={this.removeData}/>
-              <Form handleSubmit={this.handleSubmit} />
+              <Table characterData={characters} removeCharacter={this.removeCharacter}/>
+              <DokForm handleSubmit={this.handleSubmit} />
           </div>
         )
     }

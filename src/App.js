@@ -11,11 +11,11 @@ class App extends Component{
     
     return (
       <div>
-        <navigation>
+        <avigation>
           <h2>SI</h2>
           <h1><FaPowerOff /></h1>     
           
-        </navigation>
+        </avigation>
         <grid>
           <div1>
             <ul>
